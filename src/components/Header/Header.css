@@ -1,0 +1,30 @@
+
+
+.navigation-bar{
+    
+    height: 15vh;
+
+}
+.search-bar{
+    padding: 0.5rem;
+}
+
+
+.search-bar > input{
+    border: none;
+    background-color: inherit;
+
+}
+
+
+input[type="text"] {
+   font-size: 1.8rem;  
+}
+
+
+.badge-number{
+    height: 20px;
+    width: 20px;
+    font-size: 1rem;
+}
+
