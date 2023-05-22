@@ -39,7 +39,7 @@ export const Header = () => {
 
             <li className="list-inline-item">
               <Link
-                to="/screens/wishlist/wishlist.html"
+                to="/wishlist"
                 className="nav-icon-link link-no-style"
               >
                 <div className="badge-wrap">
@@ -51,7 +51,7 @@ export const Header = () => {
 
             <li className="list-inline-item">
               <Link
-                to="/screens/cart/cart.html"
+                to="/cart"
                 className="nav-icon-link link-no-style"
               >
                 <div className="badge-wrap">
