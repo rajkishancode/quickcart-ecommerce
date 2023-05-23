@@ -28,7 +28,7 @@ export const Home = () => {
     return (
       <>
         <main className="hero">
-          <Link to="/">
+          <Link to="/product">
             <img
               className="hero-image img-responsive"
               src="https://i.postimg.cc/MHcyTP28/clothing.webp"
@@ -40,7 +40,7 @@ export const Home = () => {
         <section className="my-10 section-categories">
           <div className="auth-container">
             <div className="category">
-              <Link to="/screens/product/product.html">
+              <Link to="/product">
                 <img
                   className="category-image"
                   src="https://i.postimg.cc/02wY1B0Y/printed-shirt.webp"
@@ -51,7 +51,7 @@ export const Home = () => {
               <p className="category-text">Printed Shirts</p>
             </div>
             <div className="category">
-              <Link to="/screens/product/product.html">
+              <Link to="/product">
                 <img
                   className="category-image"
                   src="https://i.postimg.cc/gJ7ZfVwt/jacket.webp"
@@ -62,7 +62,7 @@ export const Home = () => {
               <p className="category-text">Jackets</p>
             </div>
             <div className="category">
-              <Link to="/screens/product/product.html">
+              <Link to="/product">
                 <img
                   className="category-image"
                   src="https://i.postimg.cc/XY6wjksT/check-suit.jpg"
@@ -73,7 +73,7 @@ export const Home = () => {
               <p className="category-text">Check Suit</p>
             </div>
             <div className="category">
-              <Link to="/screens/product/product.html">
+              <Link to="/product">
                 <img
                   className="category-image"
                   src="https://i.postimg.cc/KYZBLvSf/shirt.webp"
@@ -84,7 +84,7 @@ export const Home = () => {
               <p className="category-text">Shirts</p>
             </div>
             <div className="category">
-              <Link to="/screens/product/product.html">
+              <Link to="/product">
                 <img
                   className="category-image"
                   src="https://i.postimg.cc/PxJD33q8/brown-hoodie.webp"
@@ -100,7 +100,7 @@ export const Home = () => {
         <section className="section-new-arrivals my-10">
           <div className="auth-container">
             <div className="card card-horizontal p-8 w-50">
-              <Link to="/screens/product/product.html">
+              <Link to="/product">
                 <img
                   className="card-image"
                   src="https://i.postimg.cc/QNPQP31N/summer.webp"
@@ -119,7 +119,7 @@ export const Home = () => {
             </div>
 
             <div className="card card-horizontal p-8">
-              <Link to="/screens/product/product.html">
+              <Link to="/product">
                 <img
                   className="card-image"
                   
