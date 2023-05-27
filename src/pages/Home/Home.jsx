@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 import { Link } from "react-router-dom";
 import "./Home.css";
@@ -43,56 +43,60 @@ export const Home = () => {
               <Link to="/product">
                 <img
                   className="category-image"
-                  src="https://i.postimg.cc/02wY1B0Y/printed-shirt.webp"
-                  alt="Printed Shirt"
-                />
-              </Link>
-
-              <p className="category-text">Printed Shirts</p>
-            </div>
-            <div className="category">
-              <Link to="/product">
-                <img
-                  className="category-image"
-                  src="https://i.postimg.cc/gJ7ZfVwt/jacket.webp"
-                  alt="Jackets"
-                />
-              </Link>
-
-              <p className="category-text">Jackets</p>
-            </div>
-            <div className="category">
-              <Link to="/product">
-                <img
-                  className="category-image"
-                  src="https://i.postimg.cc/XY6wjksT/check-suit.jpg"
-                  alt="Check Suit"
-                />
-              </Link>
-
-              <p className="category-text">Check Suit</p>
-            </div>
-            <div className="category">
-              <Link to="/product">
-                <img
-                  className="category-image"
-                  src="https://i.postimg.cc/KYZBLvSf/shirt.webp"
-                  alt="Shirts"
+                  src="https://i.postimg.cc/K8zD01dx/hm-shirt-1.jpg"
+                  alt="Shirt"
                 />
               </Link>
 
               <p className="category-text">Shirts</p>
             </div>
+
             <div className="category">
               <Link to="/product">
                 <img
                   className="category-image"
-                  src="https://i.postimg.cc/PxJD33q8/brown-hoodie.webp"
-                  alt="Brown Hoodie"
+                  src="https://i.postimg.cc/tgntHLqc/hm-hoodie-1.jpg"
+                  alt="Hoodie"
                 />
               </Link>
 
               <p className="category-text">Hoodies</p>
+            </div>
+
+            <div className="category">
+              <Link to="/product">
+                <img
+                  className="category-image"
+                  src="https://i.postimg.cc/ncT1K4S3/hm-jacket-1.webp"
+                  alt="Jacket"
+                />
+              </Link>
+
+              <p className="category-text">Jackets</p>
+            </div>
+
+            <div className="category">
+              <Link to="/product">
+                <img
+                  className="category-image"
+                  src="https://i.postimg.cc/dtTcgCP0/h-m-tshirt-2.webp"
+                  alt="TShirt"
+                />
+              </Link>
+
+              <p className="category-text">Tshirt</p>
+            </div>
+
+            <div className="category">
+              <Link to="/product">
+                <img
+                  className="category-image"
+                  src="https://i.postimg.cc/kgqrf5cB/lp-blazer-1.webp"
+                  alt="Suit"
+                />
+              </Link>
+
+              <p className="category-text">Suit</p>
             </div>
           </div>
         </section>
@@ -122,7 +126,6 @@ export const Home = () => {
               <Link to="/product">
                 <img
                   className="card-image"
-                  
                   src="https://i.postimg.cc/CxCbzntd/yellow-shirt.webp"
                   alt="Yellow Shirt"
                 />

@@ -1,4 +1,4 @@
-import { v4 as uuid } from "uuid";
+// import { v4 as uuid } from "uuid";
 
 /**
  * Category Database can be added here.
@@ -7,18 +7,28 @@ import { v4 as uuid } from "uuid";
 
 export const categories = [
   {
-    _id: "68a20c94-47ec-43ad-be3e-d31722a2cee9",
+    _id: "05dc94b0-c6c3-4b3b-ab1c-0655d2cb5a95",
     categoryName: "Shirts",
     description: "",
   },
   {
-    _id: "7543d803-3418-42af-b384-dea65d601302",
+    _id: "9d186e76-2edb-4532-9ce9-7656405a55a9",
     categoryName: "Hoodies",
     description: "",
   },
   {
-    _id: "46c210cf-3efa-46b7-bdaa-73d001d7b6ab",
+    _id: "ed8b8177-6457-4f36-9190-4aba913cc800",
     categoryName: "Jackets",
+    description: "",
+  },
+  {
+    _id: "5729a449-b66a-488e-9b41-b1eb173bb0be",
+    categoryName: "Suit",
+    description: "",
+  },
+  {
+    _id: "97729384-ca8b-46d8-8bce-b396733ef81a",
+    categoryName: "Tshirt",
     description: "",
   },
 ];
