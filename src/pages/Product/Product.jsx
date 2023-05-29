@@ -49,15 +49,15 @@ export const Product = () => {
             </li>
             <li class="my-2">
               <input class="mr-2" type="checkbox" id="brand-jack&jones" />
-              <label for="brand-jack&jones"> JACK&JONES</label>
+              <label for="brand-jack&jones"> Jack & Jones</label>
             </li>
             <li class="my-2">
               <input class="mr-2" type="checkbox" id="brand-spykar" />
-              <label for="brand-spykar"> SPYKAR</label>
+              <label for="brand-spykar"> Spykar</label>
             </li>
             <li class="my-2">
               <input class="mr-2" type="checkbox" id="brand-levi's" />
-              <label for="brand-levi's"> LEVI'S</label>
+              <label for="brand-levi's"> Louis Philippe</label>
             </li>
           </ul>
         </section>
