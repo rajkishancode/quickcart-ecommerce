@@ -9,7 +9,7 @@ import { Header } from "./components/Header/Header";
 
 import { Route, Routes } from "react-router-dom";
 
-import Mockman from "mockman-js";
+import MockAPI from "./pages/Mockman";
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/mockman" element={<Mockman />} />
+        <Route path="/mockman" element={<MockAPI />} />
       </Routes>
     </div>
   );
