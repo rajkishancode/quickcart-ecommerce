@@ -1,6 +1,6 @@
 import "./App.css";
 import { Home } from "./pages/Home/Home";
-import { Product } from "./pages/Product/Product";
+import { Products } from "./pages/Products/Products";
 import { Wishlist } from "./pages/Wishlist/Wishlist";
 import { Login } from "./pages/Auth/Login/Login";
 import { Cart } from "./pages/Cart/Cart";
@@ -17,7 +17,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/product" element={<Product />} />
+        <Route path="/products" element={<Products />} />
+        {/* <Route path="/products/:categoryName" element={<Products />} /> */}
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
