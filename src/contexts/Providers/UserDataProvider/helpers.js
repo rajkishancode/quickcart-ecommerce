@@ -51,7 +51,7 @@ const fetchWishlist = async (token, dispatcher) => {
       headers: { authorization: token },
     });
     dispatcher({
-      type: "UPDATE_BOOKMARKS",
+      type: "UPDATE_WISHLIST",
       payload: { wishlist: response.data.wishlist },
     });
   } catch (e) {
