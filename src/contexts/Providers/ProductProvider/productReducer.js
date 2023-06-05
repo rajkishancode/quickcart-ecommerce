@@ -13,6 +13,13 @@ const productsReducer = (state, action) => {
 
       return { ...state, category: newCategory };
 
+    case "BRAND":
+      const newBrand = state.brand.includes(action.brand)
+        ? state.brand.filter((cat) => cat !== action.brand)
+        : [...state.brand, action.brand];
+
+      return { ...state, brand: newBrand };
+
     case "SORT":
       return { ...state, sortBy: action.sort };
 

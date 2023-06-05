@@ -9,6 +9,11 @@ const categoryFilter = ({ category }, data) =>
     ? data
     : data.filter((prod) => category.includes(prod.categoryName));
 
+const brandFilter = ({ brand }, data) =>
+  brand.length === 0
+    ? data
+    : data.filter((prod) => brand.includes(prod.brand));
+
 
 
 const priceFilter = ({ filterPrice }, data) =>
@@ -27,4 +32,11 @@ const sortProducts = ({ sortBy }, data) =>
     : data;
 
 
-export { compose, categoryFilter, priceFilter, ratingFilter, sortProducts };
+export {
+  compose,
+  categoryFilter,
+  priceFilter,
+  ratingFilter,
+  sortProducts,
+  brandFilter,
+};

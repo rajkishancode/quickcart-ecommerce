@@ -6,6 +6,7 @@ import {
   priceFilter,
   ratingFilter,
   sortProducts,
+  brandFilter,
 } from "./helpers";
 
 
@@ -16,6 +17,7 @@ const initialState = {
     products:[],
     filteredProducts:[],
     category:[],
+    brand:[],
     sortBy:null,
     rating:null,
     filterPrice:50,
@@ -28,7 +30,8 @@ const ProductsProvider = ({children}) => {
     categoryFilter,
     priceFilter,
     ratingFilter,
-    sortProducts
+    sortProducts,
+    brandFilter
   )(state, state.products);
 
   return (
