@@ -1,8 +1,8 @@
 import React from "react";
-import {BrowserRouter as Router} from "react-router-dom";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import Contexts from "./contexts/Providers/ContextsProvider";
 import { makeServer } from "./server";
 
 // Call make Server
@@ -10,10 +10,10 @@ makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
-  <Router>
+  <Contexts>
 
     <App />
-  </Router>
+  </Contexts>
   </React.StrictMode>,
   document.getElementById("root")
 );
