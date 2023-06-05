@@ -12,7 +12,7 @@ const categoryFilter = ({ category }, data) =>
 
 
 const priceFilter = ({ filterPrice }, data) =>
-  filterPrice ? data.filter((prod) => prod.price > filterPrice) : data;
+  filterPrice ? data.filter((prod) => prod.price >= filterPrice) : data;
 
 
 const ratingFilter = ({ rating },data) => 

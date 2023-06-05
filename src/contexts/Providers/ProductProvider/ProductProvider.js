@@ -1,6 +1,12 @@
 import {createContext, useContext,useReducer} from "react";
 import { productsReducer } from "./productReducer";
-import {compose,categoryFilter,filterPrice,ratingFilter,sortProducts} from "./helpers";
+import {
+  compose,
+  categoryFilter,
+  priceFilter,
+  ratingFilter,
+  sortProducts,
+} from "./helpers";
 
 
 const ProductsContext = createContext(null);
@@ -18,7 +24,12 @@ const initialState = {
 
 const ProductsProvider = ({children}) => {
   const [state, dispatch] = useReducer(productsReducer, initialState);
-  const filteredProducts = compose(categoryFilter,filterPrice,ratingFilter,sortProducts)(state,state.products);
+  const filteredProducts = compose(
+    categoryFilter,
+    priceFilter,
+    ratingFilter,
+    sortProducts
+  )(state, state.products);
 
   return (
     <ProductsContext.Provider value={{ state, dispatch, filteredProducts }}>
