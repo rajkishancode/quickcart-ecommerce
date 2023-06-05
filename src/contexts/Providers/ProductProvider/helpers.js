@@ -11,8 +11,8 @@ const categoryFilter = ({ category }, data) =>
 
 
 
-const filterPrice = ({ filterPrice },data) => 
-    filterPrice ? data.filter((prod) => prod.price > filterPrice) :data;
+const priceFilter = ({ filterPrice }, data) =>
+  filterPrice ? data.filter((prod) => prod.price > filterPrice) : data;
 
 
 const ratingFilter = ({ rating },data) => 
@@ -23,8 +23,8 @@ const sortProducts = ({ sortBy }, data) =>
   sortBy
     ? sortBy === "LOW_TO_HIGH"
       ? [...data].sort((a, b) => a.price - b.price)
-      : [...data].sort((a, b) => b.price - b.price)
+      : [...data].sort((a, b) => b.price - a.price)
     : data;
 
 
-export {compose,categoryFilter,filterPrice,ratingFilter,sortProducts};
+export { compose, categoryFilter, priceFilter, ratingFilter, sortProducts };
