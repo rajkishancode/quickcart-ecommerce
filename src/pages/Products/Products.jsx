@@ -1,13 +1,13 @@
-import React from 'react';
 import {useEffect} from "react";
 import {ProductCard} from "../../components";
-import {useDocumentTitle} from "../../hooks";
-
+import {useProducts,useDocumentTitle} from "../../hooks";
+import {useParams} from "react-router-dom";
+import axios from "axios";
 import "./products.css";
-// import {useParam} from "react-router-dom";
 
 export const Products = () => {
-  // const params = useParam()
+  const {state,dispatch,filteredProducts} = useProducts();
+  const params = useParams();
   // const { categoryName } = params;
 
   return (

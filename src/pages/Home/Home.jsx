@@ -36,22 +36,22 @@ export const Home = () => {
         <div className="auth-container">
           <CarouselCard
             src={"https://i.postimg.cc/K8zD01dx/hm-shirt-1.jpg"}
-            text={"Shirt"}
+            text={"Shirts"}
           />
 
           <CarouselCard
             src={"https://i.postimg.cc/tgntHLqc/hm-hoodie-1.jpg"}
-            text={"Hoodie"}
+            text={"Hoodies"}
           />
 
           <CarouselCard
             src={"https://i.postimg.cc/ncT1K4S3/hm-jacket-1.webp"}
-            text={"Jacket"}
+            text={"Jackets"}
           />
 
           <CarouselCard
             src={"https://i.postimg.cc/dtTcgCP0/h-m-tshirt-2.webp"}
-            text={"TShirt"}
+            text={"Tshirt"}
           />
 
           <CarouselCard

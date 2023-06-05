@@ -5,7 +5,7 @@ import "./carousel-card.css";
 function CarouselCard({src, text}) {
   return (
     <div className="category">
-      <Link to="/product">
+      <Link to={`/products/${text}`}>
         <img className="category-image" src={src} alt="Shirt" />
       </Link>
 
