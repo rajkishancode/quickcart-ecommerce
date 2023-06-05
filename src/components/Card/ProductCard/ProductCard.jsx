@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-
+import "./product-card.css"
 function ProductCard({ info }) {
   const { title, price, original_price, src, _id } = info.prod;
   return (

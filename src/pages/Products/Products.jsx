@@ -8,7 +8,36 @@ import "./products.css";
 export const Products = () => {
   const {state,dispatch,filteredProducts} = useProducts();
   const params = useParams();
-  // const { categoryName } = params;
+  const { categoryName } = params;
+  
+
+
+
+  useEffect(() => {
+    if(categoryName !== undefined){
+      dispatch({type:"CATEGORY",category:categoryName});
+    }
+    return () => dispatch({type:"CLEAR"});
+  },[categoryName]);
+
+ const { products, category, sortBy, rating, filterPrice } = state;
+
+
+useDocumentTitle("Products | Quickcart");
+
+
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await axios("/api/products");
+        dispatch({ type: "FETCH", payload: response.data.products });
+      } catch (e) {
+        console.log(e);
+      }
+    })();
+  }, []);
+
 
   return (
     <div className="product-container">
@@ -138,183 +167,26 @@ export const Products = () => {
       </aside>
 
       <main className="products mb-10 product-list">
-        <h3 className="h3 text-center mt-10 mb-6">
-          Showing all Products <span>(showing 9 Products)</span>
+        <h3 className="h3 text-center mt-10 mb-6 ">
+          Showing{" "}
+          {category.length === 0 || category.length === 5
+            ? "All Categories"
+            : category.reduce((acc, curr) => acc + ", " + curr)}
+          <span className="ml-4">
+            (Showing {filteredProducts.length} products)
+          </span>
         </h3>
 
         <div className="auth-container">
+          {filteredProducts.map((prod) => (
+            <ProductCard key={prod._id} info={{ prod }} />
+          ))}
 
-
-
-
-          <div className="card">
-            <span className="card-badge-right">
-              <i className="fa-solid fa-heart"></i>
-            </span>
-
-            <div>
-              <img
-                src="https://i.postimg.cc/Hnfb7wd8/yellow-hoodie.webp"
-                alt="yellow hoodie"
-                className="img-responsive img-square card-image"
-              />
-            </div>
-
-            <div className="card-body p-4">
-              <div className="card-title mb-2 text-center">Yellow Hoodie</div>
-
-              <div className="card-title mb-2 text-center">
-                Rs. 2,899{" "}
-                <span className="ecom-original-price px-2"> Rs. 5,799 </span>{" "}
-                <span className="ecom-discount">(50% OFF) </span>
-              </div>
-            </div>
-
-            <button className="btn btn-solid-primary w-100 ">
-              Add to cart
-            </button>
-          </div>
-
-
-
-
-          <div className="card">
-            <span className="card-badge-right">
-              <i className="far fa-heart"></i>
-            </span>
-            <div>
-              <img
-                src="https://i.postimg.cc/Hnfb7wd8/yellow-hoodie.webp"
-                alt="yellow hoodie"
-                className="img-responsive img-square card-image"
-              />
-            </div>
-            <div className="card-body p-4">
-              <div className="card-title mb-2 text-center">Yellow Hoodie</div>
-
-              <div className="card-title mb-2 text-center">
-                Rs. 2,899{" "}
-                <span className="ecom-original-price px-2"> Rs. 5,799 </span>{" "}
-                <span className="ecom-discount">(50% OFF) </span>
-              </div>
-            </div>
-            <button className="btn btn-solid-primary w-100">Add to cart</button>
-          </div>
-
-          <div className="card">
-            <span className="card-badge-right">
-              <i className="far fa-heart"></i>
-            </span>
-            <div>
-              <img
-                src="https://i.postimg.cc/Hnfb7wd8/yellow-hoodie.webp"
-                alt="yellow hoodie"
-                className="img-responsive img-square card-image"
-              />
-            </div>
-            <div className="card-body p-4">
-              <div className="card-title mb-2 text-center">Yellow Hoodie</div>
-
-              <div className="card-title mb-2 text-center">
-                Rs. 2,899{" "}
-                <span className="ecom-original-price px-2"> Rs. 5,799 </span>{" "}
-                <span className="ecom-discount">(50% OFF) </span>
-              </div>
-            </div>
-            <button className="btn btn-solid-primary w-100">Add to cart</button>
-          </div>
-
-          <div className="card">
-            <span className="card-badge-right">
-              <i className="far fa-heart"></i>
-            </span>
-            <div>
-              <img
-                src="https://i.postimg.cc/Hnfb7wd8/yellow-hoodie.webp"
-                alt="yellow hoodie"
-                className="img-responsive img-square card-image"
-              />
-            </div>
-            <div className="card-body p-4">
-              <div className="card-title mb-2 text-center">Yellow Hoodie</div>
-
-              <div className="card-title mb-2 text-center">
-                Rs. 2,899{" "}
-                <span className="ecom-original-price px-2"> Rs. 5,799 </span>{" "}
-                <span className="ecom-discount">(50% OFF) </span>
-              </div>
-            </div>
-            <button className="btn btn-solid-primary w-100">Add to cart</button>
-          </div>
-          <div className="card">
-            <span className="card-badge-right">
-              <i className="far fa-heart"></i>
-            </span>
-            <div>
-              <img
-                src="https://i.postimg.cc/Hnfb7wd8/yellow-hoodie.webp"
-                alt="yellow hoodie"
-                className="img-responsive img-square card-image"
-              />
-            </div>
-            <div className="card-body p-4">
-              <div className="card-title mb-2 text-center">Yellow Hoodie</div>
-
-              <div className="card-title mb-2 text-center">
-                Rs. 2,899{" "}
-                <span className="ecom-original-price px-2"> Rs. 5,799 </span>{" "}
-                <span className="ecom-discount">(50% OFF) </span>
-              </div>
-            </div>
-            <button className="btn btn-solid-primary w-100">Add to cart</button>
-          </div>
-
-          <div className="card">
-            <span className="card-badge-right">
-              <i className="far fa-heart"></i>
-            </span>
-            <div>
-              <img
-                src="https://i.postimg.cc/PxJD33q8/brown-hoodie.webp"
-                alt="brown hoodie"
-                className="img-responsive img-square card-image"
-              />
-            </div>
-            <div className="card-body p-4">
-              <div className="card-title mb-2 text-center">Printed Hoodie</div>
-
-              <div className="card-title mb-2 text-center">
-                Rs. 2,500{" "}
-                <span className="ecom-original-price px-2"> Rs. 5,000 </span>{" "}
-                <span className="ecom-discount">(50% OFF) </span>
-              </div>
-            </div>
-            <button className="btn btn-solid-primary w-100">Add to cart</button>
-          </div>
-          <div className="card">
-            <span className="card-badge-right">
-              <i className="far fa-heart"></i>
-            </span>
-            <div>
-              <img
-                src="https://i.postimg.cc/PxJD33q8/brown-hoodie.webp"
-                alt="brown hoodie"
-                className="img-responsive img-square card-image"
-              />
-            </div>
-            <div className="card-body p-4">
-              <div className="card-title mb-2 text-center">Printed Hoodie</div>
-
-              <div className="card-title mb-2 text-center">
-                Rs. 2,500{" "}
-                <span className="ecom-original-price px-2"> Rs. 5,000 </span>{" "}
-                <span className="ecom-discount">(50% OFF) </span>
-              </div>
-            </div>
-            <button className="btn btn-solid-primary w-100 mt-auto">
-              Add to cart
-            </button>
-          </div>
+          {filteredProducts.length === 0 && (
+            <h3 className="no-products-msg">
+              No products matchting filters :/
+            </h3>
+          )}
         </div>
       </main>
     </div>
