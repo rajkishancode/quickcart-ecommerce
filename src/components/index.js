@@ -1,5 +1,6 @@
 import CarouselCard from "./Card/CarouselCard/CarouselCard";
 import ProductCard from "./Card/ProductCard/ProductCard";
+import CartButton from "./CartButton/CartButton";
 
 
 
@@ -10,4 +11,4 @@ import ProductCard from "./Card/ProductCard/ProductCard";
 
 
 
-export { CarouselCard, ProductCard };
+export { CarouselCard, ProductCard, CartButton };

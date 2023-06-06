@@ -103,7 +103,7 @@ const deleteFromCart = async (token, id, dispatcher, toggler = () => {}) => {
     });
     toggler(false);
     dispatcher({ type: "UPDATE_CART", payload: { cart: response.data.cart } });
-    toast.success(`Maybe another car?`);
+    toast.success(`Maybe another one?`);
   } catch (e) {
     toggler(false);
     toast.error("The server seems to like this one a lot!");

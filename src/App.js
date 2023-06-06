@@ -10,11 +10,19 @@ import { Header } from "./components/Header/Header";
 import { Route, Routes } from "react-router-dom";
 
 import MockAPI from "./pages/Mockman";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <div className="App">
       <Header />
+      <ToastContainer
+        theme="dark"
+        autoClose={1200}
+        limit="2"
+        position="bottom-left"
+        style={{ fontSize: "18px" }}
+      />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
