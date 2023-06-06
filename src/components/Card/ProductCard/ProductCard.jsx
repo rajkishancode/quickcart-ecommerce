@@ -6,7 +6,7 @@ function ProductCard({ info }) {
   const { title, price, original_price, src, _id } = info.prod;
   return (
     <div className="card">
-      <Link>
+      <Link to={`/product/${_id}`}>
         <WishlistButton prod={info.prod} classes={"card-badge-right"} />
 
         <div>
