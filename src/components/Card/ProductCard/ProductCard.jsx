@@ -1,15 +1,13 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {CartButton} from "../../.";
+import {CartButton,WishlistButton} from "../../.";
 import "./product-card.css"
 function ProductCard({ info }) {
   const { title, price, original_price, src, _id } = info.prod;
   return (
     <div className="card">
       <Link>
-        <span className="card-badge-right">
-          <i className="far fa-heart"></i>
-        </span>
+        <WishlistButton prod={info.prod} classes={"card-badge-right"} />
 
         <div>
           <img

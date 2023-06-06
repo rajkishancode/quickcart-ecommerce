@@ -55,7 +55,7 @@ export const Products = () => {
     ),
   };
 
-  console.log(priceRangeValues, "priceRangeValues");
+  
 
   return (
     <div className="product-container">
