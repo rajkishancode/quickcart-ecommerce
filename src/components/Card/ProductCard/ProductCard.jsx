@@ -2,13 +2,14 @@ import React from "react";
 import {Link} from "react-router-dom";
 import {CartButton,WishlistButton} from "../../.";
 import "./product-card.css"
-function ProductCard({ info }) {
+function ProductCard({ info,wish }) {
   const { title, price, original_price, src, _id } = info.prod;
+  
+  const wishlistStyle = !wish ? "card" : "card mw-300";
   return (
-    <div className="card">
+    <div className={wishlistStyle}>
+      <WishlistButton prod={info.prod} classes={"card-badge-right"} />
       <Link to={`/product/${_id}`}>
-        <WishlistButton prod={info.prod} classes={"card-badge-right"} />
-
         <div>
           <img
             src={src}

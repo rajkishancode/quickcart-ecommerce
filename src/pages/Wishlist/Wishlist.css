@@ -9,3 +9,12 @@
     color: red;
  
   }
+
+  .mw-300{
+    max-width: 300px;
+  }
+
+.view-product{
+  margin-left: 6rem;
+  margin-top: 3rem;
+}
