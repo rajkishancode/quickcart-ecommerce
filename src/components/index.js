@@ -3,6 +3,7 @@ import ProductCard from "./Card/ProductCard/ProductCard";
 import CartButton from "./CartButton/CartButton";
 import WishlistButton from "./WishlistButton/WishlistButton";
 import FormTextInput from "./FormInputText/FormInputText";
+import ProductSearch from "./ProductSearch/ProductSearch";
 
 
 
@@ -13,4 +14,4 @@ import FormTextInput from "./FormInputText/FormInputText";
 
 
 
-export { CarouselCard, ProductCard, CartButton, WishlistButton, FormTextInput };
+export { CarouselCard, ProductCard, CartButton, WishlistButton, FormTextInput,ProductSearch };
