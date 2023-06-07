@@ -33,8 +33,8 @@ export const Cart = () => {
           </Link>
         </div>
       </main>
-    ) : (
-      cart.map((product) => <CartCard key={product._id} prod={product} />)
+    ) : 
+      cart.map((product) => <CartCard key={product._id} prod={product} />
     );
 
   const totalPrice = cart?.reduce(

@@ -5,7 +5,7 @@ import CartButton from "./CartButton/CartButton";
 import WishlistButton from "./WishlistButton/WishlistButton";
 import FormTextInput from "./FormInputText/FormInputText";
 import ProductSearch from "./ProductSearch/ProductSearch";
-import CartCheckout from "./CartCheckout/CartCheckout";
+
 
 export {
   CarouselCard,
@@ -15,5 +15,5 @@ export {
   WishlistButton,
   FormTextInput,
   ProductSearch,
-  CartCheckout,
+  
 };
