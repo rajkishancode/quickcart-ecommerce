@@ -1,63 +1,91 @@
-import React from 'react'
+import { useEffect, useState } from "react";
+import { useUserData, useAuth, useDocumentTitle } from "../../hooks";
+import { useNavigate, Link } from "react-router-dom";
+import { CartCard } from "../../components";
+import { fetchCart } from "../../contexts/Providers/UserDataProvider/helpers";
+
 import "./Cart.css";
 export const Cart = () => {
-  return (
-    <div><main class="cart">
-        <div class="auth-container">
-            <h3 class="h3 text-center mt-10 mb-6">Cart (1)</h3>
+  const {
+    userDataState: { cart },
+    userDataDispatch,
+  } = useUserData();
 
-            <div class="cart-content d-flex justify-content-center ">
-                <div class="card card-horizontal w-50  ">
+  const navigate = useNavigate();
+  const {
+    authState: { token },
+  } = useAuth();
 
-                    <img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-                        alt="check suit" class="img-responsive img-square card-image"/>
+  useDocumentTitle("Cart | Quickcart");
 
-                    <div class="card-content p-4">
-                        <div class="card-title text-base mb-2">
-                            Suit
-                        </div>
-                        <div class="card-title my-4 text-base">
-                            Rs. 2,999 <span class="ecom-original-price px-2"> Rs.6,000 </span> <span
-                                class="ecom-discount">
-                                (50% OFF) </span>
-                        </div>
-                        <p class="my-4">
-                            Quantity: <i class="px-2 fa-solid fa-circle-minus"></i>
-                            1
-                            <i class="px-2 fa-solid fa-circle-plus"></i>
-                        </p>
-                        <div class="card-content text-base mb-2">
-                            a set of outer clothes made of the same fabric and designed to be worn together, typically
-                            consisting of a jacket and trousers.
-                        </div>
-                        <button class="cart-btn btn-solid-primary my-2 ">
-                            Remove from cart
-                        </button>
-                        <button class="cart-btn btn-outline-primary my-2">
-                            Add to wishlist
-                        </button>
-                    </div>
-                </div>
+  useEffect(() => {
+    fetchCart(token, userDataDispatch);
+  }, []);
 
-                <div class="cart-details p-10">
-                    <p class="cart-title-details fw-600 text-uppercase">Price details</p>
-                    <ul class="cart-list">
-                        <li class="cart-item ">
-                            Price (2 items) <span>&#8377; 4999</span>
-                        </li>
-                        <li class="cart-item">Discount <span>- &#8377; 1999</span></li>
-                        <li class="cart-item">
-                            Delivery Charges <span>&#8377; 499</span>
-                        </li>
-                        <li class="cart-item fw-600 text-uppercase">
-                            total amount <span>&#8377; 3499</span>
-                        </li>
-                    </ul>
-                    <p class="pb-6">You will save &#8377; 1999 on this order</p>
-                    <button class="btn btn-solid-primary w-100 m-0">PLACE ORDER</button>
-                </div>
-            </div>
+  const cartElement =
+    cart.length === 0 ? (
+      <main className="flex-col mx-auto">
+        <h3>Oh no! Your Cart is empty.</h3>
+        <h4>Add Items To View Them Here</h4>
+        <div className="view-product">
+          <Link className="btn btn-solid-primary" to={"/products"}>
+            View Products
+          </Link>
         </div>
-    </main></div>
-  )
-}
+      </main>
+    ) : (
+      cart.map((product) => <CartCard key={product._id} prod={product} />)
+    );
+
+  const totalPrice = cart?.reduce(
+    (sum, { qty, original_price }) => sum + original_price * qty,
+    0
+  );
+
+  const totalDiscount = cart?.reduce(
+    (sum, { price, original_price, qty }) =>
+      sum + (original_price - price) * qty,
+    0
+  );
+
+  const deliveryCharges =
+    cart.length !== 0 ? (totalPrice > 1000 ? 100 : 300) : "00";
+  const finalAmount = totalPrice + deliveryCharges - totalDiscount;
+
+  return (
+    <main className="cart">
+      <h3 className="h3 text-center mt-10 mb-6">Cart ({cart.length})</h3>
+      <div className="auth-container ">
+        <div className="cart-content d-flex justify-content-center">
+          <div className="w-50">{cartElement}</div>
+
+          <div className="cart-details p-10 ">
+            <p className="cart-title-details fw-600 text-uppercase">
+              Price details
+            </p>
+            <ul className="cart-list">
+              <li className="cart-item ">
+                Price ({cart.length}) <span>&#8377; {totalPrice}</span>
+              </li>
+              <li className="cart-item">
+                Discount <span>- &#8377; {totalDiscount}</span>
+              </li>
+              <li className="cart-item">
+                Delivery Charges <span>&#8377; {deliveryCharges}</span>
+              </li>
+              <li className="cart-item fw-600 text-uppercase">
+                total amount <span>&#8377; {finalAmount}</span>
+              </li>
+            </ul>
+            <p className="pb-6">
+              You will save &#8377; {totalDiscount} on this order
+            </p>
+            <button className="btn btn-solid-primary w-100 m-0">
+              PLACE ORDER
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  );
+};
